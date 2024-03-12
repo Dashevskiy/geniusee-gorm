@@ -1,0 +1,8 @@
+.header-container {
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid rgb(224, 223, 223);
+    font-style: italic;
+    font-weight: bold;
+    color: rgba(240, 64, 199, .9);
+}

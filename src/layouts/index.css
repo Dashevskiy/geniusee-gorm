@@ -1,0 +1,23 @@
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.headline {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+@media (max-width: 1140px) {
+    .main-container {
+        flex-direction: column;
+    }
+}

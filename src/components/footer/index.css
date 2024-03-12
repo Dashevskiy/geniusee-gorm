@@ -1,0 +1,22 @@
+.footer-container {
+    padding: 20px 0;
+    background-color: #474a51;
+}
+
+.footer-items {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-item {
+    cursor: pointer;
+    list-style: none;
+    color: aliceblue;
+    margin: 0 10px;
+}
+
+@media (max-width: 767px) {
+    .footer-items {
+        padding: 0;
+    }
+ }
