@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 import { string, func } from 'prop-types';
 import './index.css';
 
-function Dropdown({ countrySelected, setSelected, handleChange, err }) {
+// const Dropdown = forwardRef((props, ref) => {
+//   return <input style={{color: "red"}} {...props} ref={ref} />
+// });
+
+const Dropdown = forwardRef(( {country, setSelected, handleChange, err}, ref ) => {
   const [isActive, setIsActive] = useState(false);
   const options = ['Ukraine', 'USA', 'Poland', 'Finland', 'Germany'];
 
@@ -14,8 +18,9 @@ function Dropdown({ countrySelected, setSelected, handleChange, err }) {
 
   return (
     <div className='dropdown'>
-      <div className={`dropdown-btn ${!options.includes(countrySelected) && err ? 'err' : ''}`} onClick={() => setIsActive(!isActive)}>
-        {countrySelected}
+      <input ref={ref} className='hidden'/>
+      <div className={`dropdown-btn ${!options.includes(country) && err ? 'err' : ''}`} onClick={() => setIsActive(!isActive)}>
+        {country}
         <span
           className={`${isActive ? 'triangle-top' : 'triangle-bottom'}`}>
         </span>
@@ -25,7 +30,7 @@ function Dropdown({ countrySelected, setSelected, handleChange, err }) {
           {options.map((option) => (
             <div key={option}
               onClick={() => onClickByOption(option)}
-              className={`dropdown-item ${countrySelected === option ? 'active' : ''}`}
+              className={`dropdown-item ${country === option ? 'active' : ''}`}
             >
               {option}
             </div>
@@ -34,7 +39,7 @@ function Dropdown({ countrySelected, setSelected, handleChange, err }) {
       )}
     </div>
   )
-}
+})
 
 export default Dropdown
 
