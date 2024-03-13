@@ -299,7 +299,7 @@ const CustomForm = () => {
       terms
     };
     
-    if(!flag && emailErr.length === 0){
+    if(!flag && (emailErr.length === 0 || emailErr === false)){
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
