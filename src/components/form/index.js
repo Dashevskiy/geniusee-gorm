@@ -416,10 +416,13 @@ const CustomForm = () => {
                 ref={countryRef}
                 country={country}
                 setSelected={setSelected}
-                handleChange={(country) => handleChangeCountry(country)}
+                handleChange={(country) => {
+                  setCountryErr(false);
+                  handleChangeCountry(country)}
+                }
                 err={countryErr}
                 />
-              {country === 'Сhoose a country' && <div className='error'>{countryErr}</div>}
+              { countryErr && <div className='error'>{countryErr}</div>}
             </label>
 
             <label>
