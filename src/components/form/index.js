@@ -145,7 +145,7 @@ const CustomForm = () => {
     setAddress('');
     addressRef.current.value = '';
 
-    setSelected('Сhoose a country');
+    setSelected('Сhoose a country!');
 
     setCreditCard('');
     setCreditCardMask({
