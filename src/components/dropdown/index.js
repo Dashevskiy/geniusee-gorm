@@ -2,10 +2,6 @@ import React, { useState, forwardRef } from 'react';
 import { string, func } from 'prop-types';
 import './index.css';
 
-// const Dropdown = forwardRef((props, ref) => {
-//   return <input style={{color: "red"}} {...props} ref={ref} />
-// });
-
 const Dropdown = forwardRef(( {country, setSelected, handleChange, err}, ref ) => {
   const [isActive, setIsActive] = useState(false);
   const options = ['Ukraine', 'USA', 'Poland', 'Finland', 'Germany'];
